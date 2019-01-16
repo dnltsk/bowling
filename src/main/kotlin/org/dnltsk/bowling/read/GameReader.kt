@@ -1,9 +1,6 @@
 package org.dnltsk.bowling.read
 
 import org.dnltsk.bowling.Frame
-import org.dnltsk.bowling.NormalFrame
-import org.dnltsk.bowling.SpareFrame
-import org.dnltsk.bowling.StrikeFrame
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.io.File
@@ -20,9 +17,15 @@ class GameReader {
     fun readGameFile(filename: String): List<Frame> {
         val gameString = fileReader.readFile(filename)
         val frameStrings = gameString.split(" ")
-        return frameStrings.map(frameParser::parseFrame)
-    }
 
+        return frameStrings.mapIndexed { i, it ->
+            if (i + 1 < frameStrings.size) {
+                frameParser.parseFrame(it)
+            }else{
+                frameParser.parseLastFrame(it)
+            }
+        }
+    }
 }
 
 @Service
@@ -34,20 +37,4 @@ class FileReader {
 
 }
 
-@Service
-class FrameParser {
 
-    fun parseFrame(frame: String): Frame {
-        return if (frame.length == 1 && frame.equals("X")) {
-            StrikeFrame()
-        } else {
-            if (frame.endsWith("/")) {
-                val firstRoll = frame[0].toString().toInt()
-                SpareFrame(firstRoll)
-            } else {
-                NormalFrame(frame[0].toString().toInt(), frame[1].toString().toInt())
-            }
-        }
-    }
-
-}

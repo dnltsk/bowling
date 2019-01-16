@@ -16,7 +16,9 @@ class StrikeFrameTest {
         val testCases = listOf(
             Pair(NormalFrame(1, 2), 13),
             Pair(SpareFrame(4), 20),
-            Pair(StrikeFrame(), 20)
+            Pair(StrikeFrame(), 20),
+            Pair(LastFrame(NormalFrame(1,2),0), 13),
+            Pair(LastFrame(NormalFrame(1,2),5), 13)
         )
 
         val strikeFrame = StrikeFrame()

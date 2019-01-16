@@ -53,3 +53,19 @@ class StrikeFrame : Frame {
     }
 
 }
+
+class LastFrame(private val actualFrame: Frame, private val bonusRoll: Int) : Frame {
+
+    override fun calculateScore(nextFrame: Frame?): Int {
+        return actualFrame.calculateScore(null) + bonusRoll
+    }
+
+    override fun getSpareBonus(): Int {
+        return actualFrame.getSpareBonus()
+    }
+
+    override fun getStrikeBonus(): Int {
+        return actualFrame.getStrikeBonus()
+    }
+
+}

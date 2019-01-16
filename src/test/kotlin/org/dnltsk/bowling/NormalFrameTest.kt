@@ -27,7 +27,9 @@ class NormalFrameTest {
         val nextFrames = listOf(
             NormalFrame(1, 2),
             SpareFrame(1),
-            StrikeFrame()
+            StrikeFrame(),
+            LastFrame(NormalFrame(1,2),0),
+            LastFrame(NormalFrame(1,2),5)
         )
 
         val normalFrame = NormalFrame(1, 2)

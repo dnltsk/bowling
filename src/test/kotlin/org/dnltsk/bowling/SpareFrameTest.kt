@@ -26,7 +26,9 @@ class SpareFrameTest {
         val testCases = listOf(
             Pair(NormalFrame(1, 2), 11),
             Pair(SpareFrame(4), 14),
-            Pair(StrikeFrame(), 20)
+            Pair(StrikeFrame(), 20),
+            Pair(LastFrame(NormalFrame(1,2),0), 11),
+            Pair(LastFrame(NormalFrame(1,2),5), 11)
         )
 
         val spareFrame = SpareFrame(3)

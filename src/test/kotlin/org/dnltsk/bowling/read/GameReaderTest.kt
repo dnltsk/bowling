@@ -37,7 +37,8 @@ class GameReaderTest {
     @Test
     fun `parsing a line works correctly`() {
         val frames = reader.readGameFile("dummy-file.txt")
-        verify(frameParser, times(3)).parseFrame(any())
+        verify(frameParser, times(2)).parseFrame(any())
+        verify(frameParser, times(1)).parseLastFrame(any())
         assertThat(frames).hasSize(3)
     }
 }
