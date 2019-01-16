@@ -32,7 +32,9 @@ class GameReader {
 class FileReader {
 
     fun readFile(filename: String): String {
-        return File(filename).readLines()[0]
+        val firstLine = File(filename).readLines()[0]
+        println("Game:  $firstLine")
+        return firstLine
     }
 
 }
