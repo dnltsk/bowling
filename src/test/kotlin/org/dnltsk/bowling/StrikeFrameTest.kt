@@ -8,7 +8,25 @@ class StrikeFrameTest {
     @Test
     fun `scoring of strike frames works correctly`() {
         val frame = StrikeFrame()
-        assertThat(frame.calculateScore()).isEqualTo(10)
+        assertThat(frame.calculateScore(null)).isEqualTo(10)
+    }
+
+    @Test
+    fun `scoring of strike frames adds a bonus`() {
+        val testCases = listOf(
+            Pair(NormalFrame(Pair(1, 2)), 13),
+            Pair(SpareFrame(4), 20),
+            Pair(StrikeFrame(), 20)
+        )
+
+        val strikeFrame = StrikeFrame()
+        testCases.forEachIndexed { i, testCase ->
+            val nextFrame = testCase.first
+            val expectedScore = testCase.second
+            assertThat(strikeFrame.calculateScore(nextFrame))
+                .`as`("issues with testCase $i")
+                .isEqualTo(expectedScore)
+        }
     }
 
 }

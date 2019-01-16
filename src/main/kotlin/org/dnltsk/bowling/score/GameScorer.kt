@@ -4,11 +4,15 @@ import org.dnltsk.bowling.Frame
 import org.springframework.stereotype.Service
 
 @Service
-class GameScorer() {
+class GameScorer {
 
     fun scoreGame(frames: List<Frame>): Int {
-        return frames.map { frame ->
-            frame.calculateScore()
+        return frames.mapIndexed { i, frame ->
+            if (i + 1 < frames.size) {
+                frame.calculateScore(frames[i + 1])
+            } else {
+                frame.calculateScore(null)
+            }
         }.sum()
     }
 
