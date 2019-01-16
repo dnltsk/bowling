@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/dnltsk/bowling.svg?branch=master)](https://travis-ci.org/dnltsk/bowling)
+[![codebeat badge](https://codebeat.co/badges/f928216c-19a3-4ce0-8c0d-5a334b16666b)](https://codebeat.co/projects/github-com-dnltsk-bowling-master)
+[![codecov](https://codecov.io/gh/dnltsk/bowling/branch/master/graph/badge.svg)](https://codecov.io/gh/dnltsk/bowling)
 
 # bowling
 ~Bowling Game Kata
