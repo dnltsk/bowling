@@ -14,7 +14,7 @@ class StrikeFrameTest {
     @Test
     fun `scoring of strike frames adds a bonus`() {
         val testCases = listOf(
-            Pair(NormalFrame(Pair(1, 2)), 13),
+            Pair(NormalFrame(1, 2), 13),
             Pair(SpareFrame(4), 20),
             Pair(StrikeFrame(), 20)
         )

@@ -24,7 +24,7 @@ class SpareFrameTest {
     @Test
     fun `scoring of spare frames adds a bonus`() {
         val testCases = listOf(
-            Pair(NormalFrame(Pair(1, 2)), 11),
+            Pair(NormalFrame(1, 2), 11),
             Pair(SpareFrame(4), 14),
             Pair(StrikeFrame(), 20)
         )

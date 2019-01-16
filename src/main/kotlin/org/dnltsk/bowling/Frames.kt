@@ -6,18 +6,18 @@ interface Frame {
     fun getStrikeBonus(): Int
 }
 
-class NormalFrame(private val rolls: Pair<Int, Int>) : Frame {
+class NormalFrame(private val firstRoll: Int, private val secondRoll: Int) : Frame {
 
     override fun calculateScore(nextFrame: Frame?): Int {
-        return rolls.first + rolls.second
+        return firstRoll + secondRoll
     }
 
     override fun getSpareBonus(): Int {
-        return rolls.first
+        return firstRoll
     }
 
     override fun getStrikeBonus(): Int {
-        return rolls.first + rolls.second
+        return firstRoll + secondRoll
     }
 
 }

@@ -6,9 +6,9 @@ import org.junit.Test
 class NormalFrameTest {
 
     private val testCases = listOf(
-        Pair(NormalFrame(Pair(0, 0)), 0),
-        Pair(NormalFrame(Pair(1, 2)), 3),
-        Pair(NormalFrame(Pair(6, 3)), 9)
+        Pair(NormalFrame(0, 0), 0),
+        Pair(NormalFrame(1, 2), 3),
+        Pair(NormalFrame(6, 3), 9)
     )
 
     @Test
@@ -25,12 +25,12 @@ class NormalFrameTest {
     @Test
     fun `scoring of normal frames doesn't use any bonus`() {
         val nextFrames = listOf(
-            NormalFrame(Pair(1, 2)),
+            NormalFrame(1, 2),
             SpareFrame(1),
             StrikeFrame()
         )
 
-        val normalFrame = NormalFrame(Pair(1, 2))
+        val normalFrame = NormalFrame(1, 2)
         val expectedScore = 3
         nextFrames.forEachIndexed { i, nextFrame ->
             assertThat(normalFrame.calculateScore(nextFrame))

@@ -45,7 +45,7 @@ class FrameParser {
                 val firstRoll = frame[0].toString().toInt()
                 SpareFrame(firstRoll)
             } else {
-                NormalFrame(Pair(frame[0].toString().toInt(), frame[1].toString().toInt()))
+                NormalFrame(frame[0].toString().toInt(), frame[1].toString().toInt())
             }
         }
     }

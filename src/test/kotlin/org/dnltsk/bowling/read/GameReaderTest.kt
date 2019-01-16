@@ -31,7 +31,7 @@ class GameReaderTest {
         //returns three defined frames
         whenever(fileReader.readFile(any())).thenReturn("12 12 12")
         //returns dummy frame
-        whenever(frameParser.parseFrame(any())).thenReturn(NormalFrame(Pair(1, 2)))
+        whenever(frameParser.parseFrame(any())).thenReturn(NormalFrame(1, 2))
     }
 
     @Test

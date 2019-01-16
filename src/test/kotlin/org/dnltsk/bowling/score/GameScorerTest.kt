@@ -12,7 +12,7 @@ class GameScorerTest {
 
     @Test
     fun `sum one normal frame is calculated correctly`() {
-        val frames = listOf(NormalFrame(Pair(1,2)))
+        val frames = listOf(NormalFrame(1, 2))
         val score = scorer.scoreGame(frames)
         assertThat(score).isEqualTo(3)
     }
@@ -20,8 +20,8 @@ class GameScorerTest {
     @Test
     fun `sum multiple normal frames is calculated correctly`() {
         val frames = listOf(
-            NormalFrame(Pair(1,2)),
-            NormalFrame(Pair(1,2))
+            NormalFrame(1, 2),
+            NormalFrame(1, 2)
         )
         val score = scorer.scoreGame(frames)
         assertThat(score).isEqualTo(6)
@@ -30,11 +30,11 @@ class GameScorerTest {
     @Test
     fun `complex example produces the correct sum`() {
         val frames = listOf(
-            NormalFrame(Pair(1,2)), // 3 (+0)
+            NormalFrame(1, 2),      // 3 (+0)
             SpareFrame(1),  // 10 (+10)
             StrikeFrame(),          // 10 (+10)
             SpareFrame(4),  // 10 (+2)
-            NormalFrame(Pair(2,1))  // 3
+            NormalFrame(2, 1)       // 3
         )
         val score = scorer.scoreGame(frames)
         assertThat(score).isEqualTo(58)
