@@ -8,7 +8,7 @@ class GameScorer() {
 
     fun scoreGame(frames: List<Frame>): Int {
         return frames.map { frame ->
-            frame.rolls.first + frame.rolls.second
+            frame.calculateScore()
         }.sum()
     }
 

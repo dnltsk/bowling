@@ -5,7 +5,7 @@ import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import org.assertj.core.api.Assertions.assertThat
-import org.dnltsk.bowling.Frame
+import org.dnltsk.bowling.NormalFrame
 import org.junit.Before
 import org.junit.Test
 import org.mockito.InjectMocks
@@ -31,7 +31,7 @@ class GameReaderTest {
         //returns three defined frames
         whenever(fileReader.readFile(any())).thenReturn("12 12 12")
         //returns dummy frame
-        whenever(frameParser.parseFrame(any())).thenReturn(Frame(Pair(1, 2)))
+        whenever(frameParser.parseFrame(any())).thenReturn(NormalFrame(Pair(1, 2)))
     }
 
     @Test
