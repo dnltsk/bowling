@@ -1,6 +1,6 @@
 package org.dnltsk.bowling
 
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
 class LastFrameTest{
@@ -17,7 +17,7 @@ class LastFrameTest{
         testCases.forEachIndexed { i, it ->
             val frame = it.first
             val expectedScore = it.second
-            Assertions.assertThat(frame.calculateScore(null))
+            assertThat(frame.calculateScore(null))
                 .`as`("issues with testCase $i")
                 .isEqualTo(expectedScore)
         }
