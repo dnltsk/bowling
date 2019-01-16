@@ -50,7 +50,7 @@ class BowlingRunnerTest{
 
     @Test
     fun `game is forwarded to GameScorer`() {
-        val sampleGame = emptyList<Any>()
+        val sampleGame = emptyList<Frame>()
         whenever(reader.readGameFile(any())).thenReturn(sampleGame)
         runner.run("dummy-file")
         verify(scorer).scoreGame(eq(sampleGame))
