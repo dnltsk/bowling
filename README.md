@@ -26,4 +26,4 @@ Calculates the total score from a given score card. Input data should be formatt
 
 ## execute
 
-`java -jar build/libs/bowling-*.jar game.txt`
+`java -jar build/libs/bowling-*.jar samples/game.txt`

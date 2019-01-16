@@ -21,7 +21,7 @@ class BowlingRunner : CommandLineRunner {
 
     override fun run(vararg args: String?) {
         if(args.isEmpty()){
-            throw IllegalArgumentException("path to game must be set, e.g. folder/game.txt")
+            throw IllegalArgumentException("path to game must be set, e.g. samples/game.txt")
         }
         val game = reader.readGameFile(args[0]!!)
         val score = scorer.scoreGame(game)
