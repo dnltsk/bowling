@@ -1,12 +1,15 @@
 package org.dnltsk.bowling.score
 
+import org.dnltsk.bowling.Frame
 import org.springframework.stereotype.Service
 
 @Service
-class GameScorer(){
+class GameScorer() {
 
-    fun scoreGame(frames: List<Any>) : Int{
-        return 0
+    fun scoreGame(frames: List<Frame>): Int {
+        return frames.map { frame ->
+            frame.rolls.first + frame.rolls.second
+        }.sum()
     }
 
 
